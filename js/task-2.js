@@ -1,40 +1,19 @@
-function calcAverageCalories(days) {
-    let total = 0;
-    let averageCalories = 0;
+const images = [
+  {
+    url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    alt: 'White and Black Long Fur Cat',
+  },
+  {
+    url: 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+  },
+  {
+    url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    alt: 'Group of Horses Running',
+  },
+  
+];
 
- for (const day of days) {
-        total += day.calories;
-        averageCalories = total / days.length;
-    }
-    return averageCalories;
-}
-
-console.log(
-  calcAverageCalories([
-    { day: "monday", calories: 3010 },
-    { day: "tuesday", calories: 3200 },
-    { day: "wednesday", calories: 3120 },
-    { day: "thursday", calories: 2900 },
-    { day: "friday", calories: 3450 },
-    { day: "saturday", calories: 3280 },
-    { day: "sunday", calories: 3300 }
-  ])
-); // 3180
-
-console.log(
-  calcAverageCalories([
-    { day: "monday", calories: 2040 },
-    { day: "tuesday", calories: 2270 },
-    { day: "wednesday", calories: 2420 },
-    { day: "thursday", calories: 1900 },
-    { day: "friday", calories: 2370 },
-    { day: "saturday", calories: 2280 },
-    { day: "sunday", calories: 2610 }
-  ])
-); // 2270
-
-console.log(
-  calcAverageCalories([])
-); // 0
-
-
+const galleryList = document.querySelector('.gallery');
+const galleryHTML = images.map(image => `<li class="gallery-item"><img src="${image.url}" alt="${image.alt}"></li>`).join('');
+galleryList.innerHTML = galleryHTML;
